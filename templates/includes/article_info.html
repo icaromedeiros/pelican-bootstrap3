@@ -1,7 +1,7 @@
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
+        <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.date }}</time>
     </span>
     {% if SHOW_ARTICLE_AUTHOR %}
         {% if article.author %}
@@ -21,7 +21,7 @@
         </span>
     {% endif %}
 
-    {% include 'includes/taglist.html' %}
+    <p> {% include 'includes/taglist.html' %} </p>
     {% import 'includes/translations.html' as translations with context %}
     {{ translations.translations_for(article) }}
 </footer><!-- /.post-info -->
