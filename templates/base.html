@@ -40,7 +40,7 @@
                 <meta property="article:author" content="{{ article.author }}" />
             {% endif %}
             {% if article.image %}
-                <meta property="og:image" content="{{ article.image }}"/>
+                <meta property="og:image" content="{{ SITEURL }}/{{ article.image }}"/>
             {% elif OPEN_GRAPH_IMAGE %}
                 <meta property="og:image"
                       content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}"/>
@@ -53,7 +53,7 @@
             <meta property="og:type" content="website"/>
             <meta property="og:title" content="{{ SITENAME }}"/>
             <meta property="og:url" content="{{ SITEURL }}"/>
-            <meta property="og:description" content="{{ SITENAME }}"/>
+            <meta property="og:description" content="{{ DESCRIPTION }}"/>
             {% if OPEN_GRAPH_IMAGE %}
             <meta property="og:image"
                   content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}"/>
