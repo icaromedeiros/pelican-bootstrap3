@@ -1,8 +1,10 @@
 {% macro translations_for(article) %}
 {% if article.translations %}
-<span class="label label-default">Lang</span>
+<span class="label label-default">{{ LANG_CONFIG.get(article.lang).get("lang_text") }}</span>
 {% for translation in article.translations %}
-	<a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
+    <a href="{{ SITEURL }}/{{ translation.url }}">
+        {{ LANG_CONFIG.get(translation.lang).get("lang_label") }}
+    </a>
 {% endfor %}
 {% endif %}
 {% endmacro %}
