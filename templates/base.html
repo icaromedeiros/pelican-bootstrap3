@@ -4,12 +4,11 @@
       xmlns:fb="https://www.facebook.com/2008/fbml"
       itemscope itemtype="http://schema.org/BlogPosting">
 <head>
-    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    <title itemprop="name">{% block title %}{{ SITENAME }}{% endblock %}</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     {% if FAVICON %}
     <link href="{{ SITEURL }}/{{ FAVICON }}" rel="icon">
 
@@ -104,7 +103,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="{{ SITEURL }}/" class="navbar-brand">
-                {% if SITELOGO %}<img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}"/> {% endif %}
+                {% if SITELOGO %}<img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}"/ itemprop="creator"> {% endif %}
                 {% if not HIDE_SITENAME %}{{ SITENAME }}{% endif %}
             </a>
         </div>
