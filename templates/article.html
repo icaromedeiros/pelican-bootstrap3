@@ -38,6 +38,10 @@
                 </div>
                 {{ article.content }}
             </div>
+            <div class="tags">
+                <p> {% include "includes/taglist.html" %} </p>
+            </div>
+
             <!-- /.entry-content -->
             {% include 'includes/related-posts.html' %}
             {% include 'includes/addthis.html' %}

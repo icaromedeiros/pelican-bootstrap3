@@ -1,27 +1,30 @@
 <footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time itemprop="datePublished" datetime="{{ article.date.isoformat() }}"> {{ article.date }}</time>
-    </span>
-    {% if SHOW_ARTICLE_AUTHOR %}
-        {% if article.author %}
-            <span class="label label-default">By</span>
-            <a href="{{ SITEURL }}/{{ article.author.url }}"><i class="fa fa-user"></i> {{ article.author }}</a>
-        {% endif %}
-    {% endif %}
-
-    {% if SHOW_ARTICLE_CATEGORY %}
-        <span class="label label-default">Category</span>
-        <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-    {% endif %}
-
-    {% if PDF_PROCESSOR %}
-        <span class="label label-default">
-            <a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">PDF</a>
+    <p class="halfspace">
+        <span class="label label-default">Date</span>
+        <span class="published">
+            <i class="fa fa-calendar"></i><time itemprop="datePublished" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
         </span>
-    {% endif %}
+        {% if SHOW_ARTICLE_AUTHOR %}
+            {% if article.author %}
+                <span class="label label-default">By</span>
+                <a href="{{ SITEURL }}/{{ article.author.url }}"><i class="fa fa-user"></i> {{ article.author }}</a>
+            {% endif %}
+        {% endif %}
 
-    <p> {% include 'includes/taglist.html' %} </p>
-    {% import 'includes/translations.html' as translations with context %}
-    {{ translations.translations_for(article) }}
+        {% if SHOW_ARTICLE_CATEGORY %}
+            <span class="label label-default">Category</span>
+            <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+        {% endif %}
+
+        {% if PDF_PROCESSOR %}
+            <span class="label label-default">
+                <a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">PDF</a>
+            </span>
+        {% endif %}
+    </p>
+
+    <p class="halfspace">
+        {% import 'includes/translations.html' as translations with context %} 
+        {{ translations.translations_for(article) }}
+    </p>
 </footer><!-- /.post-info -->

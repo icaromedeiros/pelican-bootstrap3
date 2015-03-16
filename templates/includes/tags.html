@@ -1,0 +1,5 @@
+<footer class="post-info">
+    <p> {% include 'includes/taglist.html' %} </p>
+    {% import 'includes/translations.html' as translations with context %}
+    {{ translations.translations_for(article) }}
+</footer><!-- /.post-info -->
